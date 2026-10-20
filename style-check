@@ -45,6 +45,10 @@ exceeds-line-length() (
 
 	local file=$1
 
+	# dave had issues with awk not respecting my LC_ALL locale and
+	# incorrectly counting the length of a line that had unicode bar
+	# characters in it.  bash seems to handle this just fine - this is
+	# probably slower but hopefully it's not that big of a deal.
 	check-over() {
 		local columns=$1
 		local lineno=0
