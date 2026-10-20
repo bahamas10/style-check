@@ -56,10 +56,11 @@ exceeds-line-length() (
 
 			if ((${#line} > columns)); then
 				printf 'line %d: over %d columns\n' \
-					"$lineno" "$columns"
+				    "$lineno" "$columns"
 				code=1
 			fi
 		done
+
 		return "$code"
 	}
 
